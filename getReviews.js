@@ -1,4 +1,4 @@
-var dataSource = "file"
+var dataSource = "https"
 var fs = require('fs')
 
 var history;
@@ -44,7 +44,7 @@ function readReviews () {
 		  res.on('data', function(d) {
 		    buffer += d
 		  })
-		  response.on('end', function () {
+		  res.on('end', function () {
 		    processReviews (buffer)
 		  })
 		})
